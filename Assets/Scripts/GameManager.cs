@@ -156,7 +156,7 @@ public class GameManager : MonoBehaviour
 
 		LBScore lbscore = new LBScore (PlayerPrefs.GetString(PlayerPrefsVariables.Username, ""), dificulty, score);
 
-		using (UnityWebRequest www = UnityWebRequest.Put ("http://node.perspective-v.com/score", JsonUtility.ToJson (lbscore))) {
+		using (UnityWebRequest www = UnityWebRequest.Put ("https://node.perspective-v.com/score", JsonUtility.ToJson (lbscore))) {
 			www.SetRequestHeader("Content-Type", "application/json");
 			yield return www.Send ();
 			Debug.Log (www.responseCode);
